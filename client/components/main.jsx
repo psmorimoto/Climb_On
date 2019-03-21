@@ -1,12 +1,17 @@
 import React from 'react';
 import Nav from './Nav.jsx';
+import AddClimb from './AddClimb.jsx';
 
-const main = () => {
+const Main = () => {
   return (
     <div>
       <Nav />
+      <AddClimb />
+      <div>
+        
+      </div>
     </div>
   )
 };
 
-export default main;
+export default Main;
