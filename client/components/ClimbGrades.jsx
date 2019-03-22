@@ -4,9 +4,6 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 export default class ClimbGrades extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      climbGrade: 'Bouldering'
-    }
   }
 
   render() {
@@ -14,7 +11,7 @@ export default class ClimbGrades extends React.Component {
       return (
         <FormGroup>
           <Label for="ClimbGrade">Climbing Grade</Label>
-          <Input type="select" name="ClimbGrade" id="SelectClimbGrade">
+          <Input type="select" name="climbGrade" id="SelectClimbGrade" onChange={this.props.handleClimbType}>
             <option>V0</option>
             <option>V1</option>
             <option>V2</option>
@@ -33,7 +30,7 @@ export default class ClimbGrades extends React.Component {
       return (
         <FormGroup>
           <Label for="ClimbGrade">Climbing Grade</Label>
-          <Input type="select" name="ClimbGrade" id="SelectClimbGrade">
+          <Input type="select" name="climbGrade" id="SelectClimbGrade" onChange={this.props.handleClimbType}>
             <option>5.9</option>
             <option>5.10a</option>
             <option>5.10b</option>
@@ -51,7 +48,7 @@ export default class ClimbGrades extends React.Component {
       return (
         <FormGroup>
           <Label for="ClimbGrade">Climbing Grade</Label>
-          <Input type="select" name="ClimbGrade" id="SelectClimbGrade">
+          <Input type="select" name="climbGrade" id="SelectClimbGrade" onChange={this.props.handleClimbType}>
             <option>5.9lead</option>
             <option>5.10a</option>
             <option>5.10b</option>

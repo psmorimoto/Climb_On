@@ -43,7 +43,7 @@ export default class AddClimb extends React.Component {
                 <option>Lead</option>
                 </Input>
             </FormGroup>
-            <ClimbGrades climbType={this.state.climbType} />
+            <ClimbGrades climbType={this.state.climbType} handleClimbType={this.handleClimbType} />
             <FormGroup>
               <Label for="ClimbLocation">Location</Label>
               <Input type="text" name="climbLocation" onChange={this.handleClimbType}></Input>
