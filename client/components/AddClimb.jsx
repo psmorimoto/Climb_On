@@ -8,7 +8,9 @@ export default class AddClimb extends React.Component {
     this.state = {
       showModal: false,
       climbType: 'Bouldering',
-      climbGrade: ''
+      climbGrade: '',
+      climbLocation: '',
+      climbDescription: '',
     }
     this.handleModal = this.handleModal.bind(this);
     this.handleClimbType = this.handleClimbType.bind(this);
@@ -19,7 +21,7 @@ export default class AddClimb extends React.Component {
   }
 
   handleClimbType(e) {
-    this.setState({climbType: e.target.value});
+    this.setState({[e.target.name]: e.target.value});
   }
 
   render() {
@@ -35,7 +37,7 @@ export default class AddClimb extends React.Component {
           <Form>
             <FormGroup>
               <Label for="exampleClimbType">Climbing Type</Label>
-              <Input type="select" name="ClimbType" id="SelectClimbType" onChange={this.handleClimbType}>
+              <Input type="select" name="climbType" id="SelectClimbType" onChange={this.handleClimbType}>
                 <option>Bouldering</option>
                 <option>Top Rope</option>
                 <option>Lead</option>
@@ -43,9 +45,21 @@ export default class AddClimb extends React.Component {
             </FormGroup>
             <ClimbGrades climbType={this.state.climbType} />
             <FormGroup>
-              <Label for="ClimbLocation"></Label>
+              <Label for="ClimbLocation">Location</Label>
+              <Input type="text" name="climbLocation" onChange={this.handleClimbType}></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label for="ClimbDescription">Description/Notes</Label>
+              <Input type="textarea" name="climbDescription" onChange={this.handleClimbType}></Input>
             </FormGroup>
           </Form>
+
+          <div>
+            {this.state.climbType} --
+            {this.state.climbGrade} --
+            {this.state.climbLocation} --
+            {this.state.climbDescription}
+          </div>
         </div>
       )
     }
